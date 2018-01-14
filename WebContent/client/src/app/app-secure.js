@@ -10,6 +10,10 @@ define([
 	
 	var module = angular.module(moduleName, ['app.secure.templates', 'app.core', 'app.secure']);
 	
+	module.config(['$locationProvider', function($locationProvider) {
+		$locationProvider.html5Mode(true);
+	}]);
+	
 	module.run(['$templateCache', '$compile', '$rootScope', '$location', '$state', function($templateCache, $compile, $rootScope, $location, $state) {
 		var templatesHTML = $templateCache.get('app.secure.templates');
 		$compile(templatesHTML)($rootScope);

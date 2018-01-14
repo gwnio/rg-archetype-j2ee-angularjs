@@ -10,6 +10,10 @@ define([
 	
 	var module = angular.module(moduleName, ['app.public.templates', 'app.core', 'app.login']);
 	
+	module.config(['$locationProvider', function($locationProvider) {
+		$locationProvider.html5Mode(true);
+	}]);
+	
 	module.factory('$exceptionHandler', ['$log', 'spinnerService', function($log, spinnerService) {
 		return function(err, cause) {
 			spinnerService.hideAll();

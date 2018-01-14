@@ -14,10 +14,6 @@ define([
 	AppUrisService) {
 	var module = angular.module('app.core', ['ui.router', 'angularSpinners', 'ngSanitize', 'app.net']);
 	
-	module.config(['$locationProvider', function($locationProvider) {
-		$locationProvider.html5Mode(true);
-	}]);
-	
 	module.factory('principal', Principal);
 	module.factory('AuthService', AuthService);
 	
