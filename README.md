@@ -15,6 +15,7 @@ FYI [The usage of archetype and meaning I got from maven.](https://maven.apache.
 * Hibernate 5.1
 * VT Password
 * Angular 1.5.8
+* Bootstrap
 * Other 3rd party libraries (i.e. Apache commons lang)
 
 ## Highlights
