@@ -13,6 +13,7 @@ import org.ocpsoft.rewrite.servlet.config.Forward;
 import org.ocpsoft.rewrite.servlet.config.HttpConfigurationProvider;
 import org.ocpsoft.rewrite.servlet.config.Path;
 import org.rg.archetype.common.AppUris;
+import org.rg.archetype.data.model.AppData;
 
 /**
  * http://www.ocpsoft.org/rewrite/
@@ -35,8 +36,8 @@ public class UrlRewriteConfigurationProvider extends HttpConfigurationProvider {
 		final List<String> secureUrls = new ArrayList<String>();
 		secureUrls.add("/" + AppUris.ROOT_PATH_NAME);
 		
-		String appPublicEp = "/client/src/index-app-public.jsp";
-		String appSecureEp = "/client/src/index-app-secure.jsp";
+		String appPublicEp = AppData.getInstance().getAppPublicEp();
+		String appSecureEp = AppData.getInstance().getAppSecureEp();
 		
 		ConfigurationBuilder cfgBldr = ConfigurationBuilder.begin();
 		for (String publicUrl : publicUrls) {

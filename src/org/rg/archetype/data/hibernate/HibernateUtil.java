@@ -21,6 +21,10 @@ public class HibernateUtil {
         return sessionFactory;
     }
     
+    public static void beginTransaction() {
+		getSessionFactory().getCurrentSession().beginTransaction();
+	}
+    
     public static void commit() {
     	getSessionFactory().getCurrentSession().getTransaction().commit();
     	getSessionFactory().getCurrentSession().beginTransaction();
@@ -29,5 +33,9 @@ public class HibernateUtil {
     public static void rollback() {
 		getSessionFactory().getCurrentSession().getTransaction().rollback();
 		getSessionFactory().getCurrentSession().beginTransaction();
+	}
+    
+    public static void closeSession() {
+		getSessionFactory().getCurrentSession().close();
 	}
 }
