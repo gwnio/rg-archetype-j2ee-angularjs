@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 				force : true
 			},
 			build : [ '<%= compile_dir %>', '<%= dist_dir %>' ],
-			release : [ './node_modules', '<%= compile_dir %>' ]
+			release : [ './node_modules', './package-lock.json', '<%= compile_dir %>' ]
 		},
 
 		env : {

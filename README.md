@@ -148,3 +148,9 @@ jboss-cli.bat --file={rg-archetype-j2ee-angularjs home}\Resources\jboss-add-secu
   * or as a jar file in ``{wildfly_home}\standalone\deployments\rg-archetype-j2ee-angularjs.war\WEB-INF\lib``
 * A custom Principal is used called **UserPrincipal**.  This custom principal includes the user id, username, and role.  The role in this custom principal corresponds to the <security-role> in the deployment descriptor.
 * Notice the method **#getRoleSets**, the role in my custom principal gets added to the caller principal group
+
+## Deploy
+
+npm install
+grunt build-app
+grunt prod-clean
